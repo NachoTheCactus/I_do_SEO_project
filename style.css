@@ -1,0 +1,110 @@
+/*Medias have +1 pixed because min-width means bigger or equal than the value given*/
+
+/*Mobile first*/
+:root{
+    --distance: 0.5rem;
+}
+body{
+    font-family: 'Inter';
+}
+h1{
+    font-size: 36px;
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    margin-bottom: calc(var(--distance)*4);
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    
+}
+.flex-col>*{
+    margin: 0;
+}
+.gap{
+    gap: var(--distance);
+}
+.box{
+    padding: var(--distance);
+}
+.big-image{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+.partners-txt{
+    text-transform: uppercase;
+    color: #969696;
+    font-size: 13px;
+}
+button{
+    background-color: #24AFB5;
+    color: white;
+    border-radius: 6px;
+    padding: 11px 16px;
+    border: none;
+    font-size: 20px;
+    width: fit-content;
+}
+
+/*Tablet and landscape mobile*/
+@media screen and (min-width: 426px){
+    .box{
+        padding: calc(var(--distance)*2);
+    }
+    .gap{
+        gap: calc(var(--distance)*2);
+    }
+    h1{
+        font-size: 32px;
+    }
+}
+@media screen and (min-width: 641px){
+    .container{
+        max-width: 640px;
+    }
+}
+/*Laptop (Desktop in your design)*/
+@media screen and (min-width: 769px){
+    .container{
+        max-width: 768px;
+    }
+    .big-image{
+        aspect-ratio: 1 / 1;
+        width: fit-content;
+    }
+    .flex{
+        flex-direction: row;
+    }
+    .gap{
+        gap: calc(var(--distance)*4);
+    }
+    h1{
+        margin-top: 0;
+    }
+    .box{
+        padding: calc(var(--distance)*8);
+    }
+}
+/*Desktop*/
+@media screen and (min-width: 1025px){
+    .container{
+        max-width: 1024px;
+    }
+    .flex{
+        align-items: center;
+    }
+}
